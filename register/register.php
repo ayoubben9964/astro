@@ -6,6 +6,16 @@ session_start();
 
 require '../inc/fonctions.php';
 
+// Ce script PHP permet de traiter les données du formulaire d'inscription d'un nouvel utilisateur. Il commence par initialiser les variables $nom, $email, $pwd et $errors à une chaîne vide.
+
+// Ensuite, si la méthode de requête est "POST", le script utilise la fonction cleanData() pour nettoyer les données envoyées par le formulaire et les stocke dans les variables correspondantes.
+
+// Ensuite, le script vérifie si l'adresse e-mail saisie existe déjà dans la base de données en appelant la fonction findEmail(). Si l'adresse e-mail existe, le script stocke un message d'erreur dans la variable $errors. Sinon, il utilise la fonction insertUser() pour ajouter un nouvel utilisateur à la base de données avec les informations saisies, puis redirige l'utilisateur vers la page d'accueil.
+
+// Si l'adresse e-mail et/ou le mot de passe sont manquants ou incorrects, le script stocke également un message d'erreur dans la variable $errors.
+
+// Enfin, le script se termine par une balise de fermeture PHP, ce qui suggère que le code HTML qui suit est une partie de la vue d'inscription.
+
 $nom = $email = $pwd = $errors = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') :
@@ -58,6 +68,9 @@ endif;
             <div>
                 <input type="submit" value="Inscription">
             </div>
+
+            <!-- Cela permet d'afficher les erreurs éventuelles lors de la soumission du formulaire d'inscription, dans une section dédiée à cet effet. Si la variable $errors n'est pas vide, alors on affiche les erreurs sous forme de liste. -->
+
             <?php if (!empty($errors)) : ?>
                 <div class="errors">
                     <ul class="errors">

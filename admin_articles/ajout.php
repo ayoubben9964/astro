@@ -4,6 +4,28 @@
 */
 include '../inc/fonctions.php';
 
+// Le code que vous avez fourni est un script PHP qui sert à ajouter un article à une base de données. Il utilise la méthode POST pour récupérer les données envoyées depuis un formulaire HTML.
+
+// Voici une brève explication de ce que fait chaque ligne de code :
+
+// $titre = $contenu = $image_url = $created_at = ''; : Initialise les variables $titre, $contenu, $image_url et $created_at avec une chaîne vide pour éviter des erreurs si ces variables ne sont pas définies plus tard dans le script.
+
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') : : Vérifie si la méthode HTTP utilisée pour envoyer les données est POST. Si c'est le cas, cela signifie que les données du formulaire ont été envoyées et qu'elles peuvent être récupérées.
+
+// $titre = cleanData($_POST['titre']); : Récupère le titre de l'article depuis les données envoyées via le formulaire HTML et utilise la fonction cleanData() pour nettoyer les données et éviter les attaques de type injection SQL.
+
+// $contenu = cleanData($_POST['contenu']); : Récupère le contenu de l'article depuis les données envoyées via le formulaire HTML et utilise la fonction cleanData() pour nettoyer les données et éviter les attaques de type injection SQL.
+
+// $image_url = cleanData($_POST['image_url']); : Récupère l'URL de l'image de l'article depuis les données envoyées via le formulaire HTML et utilise la fonction cleanData() pour nettoyer les données et éviter les attaques de type injection SQL.
+
+// $created_at = cleanData($_POST['created_at']); : Récupère la date de création de l'article depuis les données envoyées via le formulaire HTML et utilise la fonction cleanData() pour nettoyer les données et éviter les attaques de type injection SQL.
+
+// insertArticles($titre, $contenu, $image_url, $created_at,$id_utilisateur); : Appelle une fonction insertArticles() pour insérer les données de l'article dans la base de données en utilisant les variables précédemment récupérées.
+
+// header('Location: ./index.php'); : Redirige l'utilisateur vers la page d'accueil (index.php) après avoir inséré les données dans la base de données.
+
+// exit(); : Arrête l'exécution du script pour éviter que d'autres instructions ne soient exécutées après la redirection.
+
 $titre = $contenu = $image_url = $created_at = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') :

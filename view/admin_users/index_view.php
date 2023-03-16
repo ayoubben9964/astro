@@ -27,6 +27,10 @@
         </tr>
       </thead>
       <tbody>
+
+      <!-- Ce code sert à afficher tous les utilisateurs enregistrés dans la base de données dans un tableau HTML. Pour chaque utilisateur, le code affiche l'ID, le nom et l'e-mail, ainsi que des liens pour modifier ou supprimer l'utilisateur. -->
+      
+
         <?php foreach (getUserAll() as $key => $value) : ?>
           <tr>
             <td><?= $value['id_utilisateur'] ?></td>

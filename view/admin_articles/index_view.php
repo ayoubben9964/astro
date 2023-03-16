@@ -32,6 +32,10 @@
             </tr>
          </thead>
          <tbody>
+
+         <!-- Cela affiche une table HTML qui contient les informations de tous les articles enregistrés dans la base de données, limités à un certain nombre (défini par la variable $limit) et à partir d'un certain offset (défini par la variable $offset). Pour chaque article, les informations sont affichées dans une ligne de tableau avec les colonnes titre, contenu, URL de l'image, date de création, et deux boutons pour éditer et supprimer l'article. -->
+
+
             <?php foreach (getArticlesLimit($limit, $offset) as $key => $value) : ?>
                <tr>
                   <td><?= $value['titre'] ?></td>
